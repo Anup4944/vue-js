@@ -1,14 +1,49 @@
 <template>
   <div class="container">
     <HeaderVue title="Task Manager" />
+    <Tasks :tasks="tasks" />
   </div>
 </template>
 
 <script>
 import HeaderVue from "./components/Header.vue";
+import Tasks from "./components/Tasks.vue";
 export default {
   name: "App",
-  components: { HeaderVue },
+  components: { HeaderVue, Tasks },
+  data() {
+    return {
+      tasks: [],
+    };
+  },
+  created() {
+    this.tasks = [
+      {
+        id: 1,
+        text: "Doctor Appointments",
+        day: "March 1st at 3pm",
+        reminder: true,
+      },
+      {
+        id: 2,
+        text: "Meeting at School",
+        day: "March 3st at 3pm",
+        reminder: true,
+      },
+      {
+        id: 3,
+        text: "Food Shopping",
+        day: "March 15st at 3pm",
+        reminder: false,
+      },
+      {
+        id: 4,
+        text: "Car servicing",
+        day: "March 15st at 8pm",
+        reminder: false,
+      },
+    ];
+  },
 };
 </script>
 
