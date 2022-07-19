@@ -1,11 +1,14 @@
 <template>
-  <h1>Hello</h1>
+  <div class="container">
+    <HeaderVue title="Task Manager" />
+  </div>
 </template>
 
 <script>
+import HeaderVue from "./components/Header.vue";
 export default {
   name: "App",
-  components: {},
+  components: { HeaderVue },
 };
 </script>
 
