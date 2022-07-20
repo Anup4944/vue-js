@@ -13,7 +13,7 @@ export default {
   },
   methods: {
     onClick() {
-      //   console.log("from on click");
+      this.$emit("toggle-add");
     },
   },
 };
