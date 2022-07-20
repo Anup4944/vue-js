@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <HeaderVue title="Task Manager" />
-    <Tasks :tasks="tasks" />
+    <Tasks @delete-task="deleteTask" :tasks="tasks" />
   </div>
 </template>
 
@@ -15,6 +15,13 @@ export default {
     return {
       tasks: [],
     };
+  },
+  methods: {
+    deleteTask(id) {
+      if (confirm("Are you sure?")) {
+        this.tasks = this.tasks.filter((task) => task.id !== id);
+      }
+    },
   },
   created() {
     this.tasks = [
